@@ -31,6 +31,10 @@ public void start(Stage stage) {
 Text t1 = new Text("Nama     :");
 Text t2 = new Text("Telepon  :");
 Text t3 = new Text("Alamat   :");
+Text t4 = new Text();
+Text t5 = new Text();
+Text t6 = new Text();
+Text t7 = new Text();
 TextField tField1 = new TextField();
 TextField tField2 = new TextField();
 TextArea tArea1 = new TextArea();
@@ -39,10 +43,10 @@ Button btn1 = new Button("Kirim");
 Button btn2 = new Button("Hapus");
         
 GridPane gridPane = new GridPane();
-gridPane.setMinSize(400, 200);
-gridPane.setPadding(new Insets(50,50,50,50));
-gridPane.setVgap(7);
-gridPane.setHgap(9);
+gridPane.setMinSize(400, 300);
+gridPane.setPadding(new Insets(100,100,100,100));
+gridPane.setVgap(10);
+gridPane.setHgap(10);
 gridPane.setAlignment(Pos.CENTER);
 
 gridPane.add(t1, 0, 0);
@@ -53,6 +57,27 @@ gridPane.add(t3, 0, 2);
 gridPane.add(tArea1, 1, 2);
 gridPane.add(btn1, 0, 3);
 gridPane.add(btn2, 1, 3);
+gridPane.add(t4, 1, 4);
+gridPane.add(t5, 1, 5);
+gridPane.add(t6, 1, 6);
+gridPane.add(t7, 1, 7);
+
+btn1.setOnAction(value -> {
+    t4.setText("SELAMAT BERGABUNG DENGAN KAMI");
+    t5.setText(t1.getText() + "   " + tField1.getText());
+    t6.setText(t2.getText() + "   " + tField2.getText());
+    t7.setText(t3.getText() + "   " + tArea1.getText());
+});
+
+btn2.setOnAction(value -> {
+    tField1.setText("");
+    tField2.setText("");
+    tArea1.setText("");
+    t4.setText("");
+    t5.setText("");
+    t6.setText("");
+    t7.setText("");
+});
 
 Scene scene1 = new Scene(gridPane);
 
